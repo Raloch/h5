@@ -1,0 +1,19 @@
+body,p,span,ul,li,h2,a {
+	margin: 0;
+	padding: 0;
+}
+p,span,img,h2,article,a {
+	display: block;
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
+.heightcenter {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+a { text-decoration: none; }

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>详细</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/detail.css">
+	<style>
+		@font-face {
+			font-family: Suiguanjia-Mediu;
+			src: url(fonts/Suiguanjia-Mediu.woff);
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<!-- 头部 start -->
+		<div id="header">
+			<div class="header_box">
+				<img src="images/detail_header_logo.png" class="header_logo" />
+				<div class="header_title">
+					<div class="header_title_text">
+						<p class="header_title_text_1">担当者行动</p>
+						<p class="header_title_text_2">班班有个图书角</p>
+					</div>
+				</div>
+				<div class="header_money_note">
+					<div class="header_money_spend">
+						<p class="spend">支出</p>
+						<p class="spend_money">12,313.00</p>
+					</div>
+					<div class="header_money_income">
+						<p class="income">收入</p>
+						<p class="income_money">3,420.00</p>
+					</div>
+					<div class="header_money_remain">
+						<p class="remain">结余</p>
+						<p class="remain_money">12,313.00</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end -->
+		<!-- 账本流水 start -->
+		<div id="record">
+			<p class="record_text">账本流水</p>
+		</div>
+		<!-- end -->
+		<!-- 日期 start -->
+		<div id="date">
+			<p class="date_year"><!-- 2016.6 --></p>
+			<div class="date_msg">
+				<p class="date_day fl">23</p>
+				<div class="date_week fl">
+					<p class="fl week"><!-- / 周五 --></p>
+					<div class="money_calculate fr">
+						<div class="pic_add fl">
+							<p class="add fl"></p>
+							<p class="add_money fl">100.00</p>
+						</div>
+						<div class="pic_add fl">
+							<p class="reduce fl"></p>
+							<p class="reduce_money fl">4000.00</p>
+						</div>
+						<div class="pic_add fl">
+							<p class="package fl"></p>
+							<p class="package_money fl">3900.00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end -->
+		<div class="indexList"></div>
+		<!-- <div class="main">
+			<div class="main_l_area fl">
+				<img src="images/main_mark1.png" class="main_mark1" />
+			</div>
+			<div class="main_r_area fl">
+				<div class="main_title">
+					<p class="main_title_l">超市购物</p>
+					<p class="main_title_r">10.00</p>
+				</div>
+				<img src="images/bathroom.png" class="bathroom" />
+				<p class="pic_msg">16:42·招商银行卡·自己·沃尔玛大超市</p>
+			</div>
+		</div> -->
+		<div id="bigpic">
+			<img src="" class="big_bath" />
+		</div>
+		<div id="footer">
+			<div class="footer_1">支出分类表</div>
+			<div class="footer_2">支出预算表</div>
+			<div class="footer_3">切换项目</div>
+		</div>
+	</div>
+</body>
+<script src="js/mob.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	var pic = $('#bigpic');
+	oBath = document.getElementsByClassName('bathroom'),
+	oBig_bath = document.getElementsByClassName('big_bath')[0];
+	$(function(){
+		$.ajax({
+			type: "GET",
+			url: "detail.json",
+			dataType: "json",
+			success: function(data){
+				console.log(JSON.stringify(data,null,4));
+				var dat = data.monthTransactions[0].dayTransactions,
+				result = '',
+				items = data.monthTransactions[0].dayTransactions[0].transactionItems,
+				len = dat[0].transactionItems.length;
+				$(".spend_money").html(dat[0].expenditureTotal);
+				$(".income_money").html(dat[0].inComeTotal);
+				$(".remain_money").html(dat[0].surplus);
+				$(".week").html('/ '+dat[0].weekOfDay);
+				$('.date_year').html(data.monthTransactions[0].yearMonth);
+				$(".date_day").html(dat[0].dateOfDay);
+				for(var i=0;i<len;i++){
+					var categoryName = items[i].categoryName,
+					bottomBar = items[i].bottomBar,
+					transactionImgUrl = items[i].transactionImgUrl,
+					transactionIcon1 = items[i].transactionIcon1,
+					money = items[i].money;
+					result += '<div class="main">'+
+								'<div class="main_l_area fl"></div>'+
+								'<div class="main_r_area fl">'+
+									'<div class="main_title">'+
+										'<p class="main_title_l">'+categoryName+'</p>'+
+										'<p class="main_title_r">'+money+'</p>'+
+									'</div>'+
+									'<img src='+ transactionImgUrl + ' class="bathroom"/> '+
+									'<p class="pic_msg">'+bottomBar+'</p>'+
+								'</div>'+
+							'</div>';
+				}
+				$('.indexList').append(result);
+				for(var i=0;i<len;i++){
+					x = -0.72*i+'rem';
+					$('.main_l_area:eq('+i+')').css('background','url(https://res.feidee.com/money/img/tally/cat48.png) no-repeat '+x+' 0');
+					oBath[i].index = i;
+					oBath[i].onclick = function (){
+						pic.css('display','block');
+						oBig_bath.src = items[this.index].transactionImgUrl;
+					}
+					pic.click(function(){
+						$(this).css('display','none');
+					})
+				}
+				$('.main_l_area').css('background-size','auto 0.72rem');
+			}
+		})
+	})
+</script>
+</html>
