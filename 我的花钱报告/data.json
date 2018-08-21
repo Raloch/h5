@@ -1,0 +1,51 @@
+{
+    "errCode": 1,
+    "errMsg": "成功",
+    "items": {
+        "ad": {
+            "img": "",
+            "link": ""
+        },
+        "cost": {
+            "avg_percent": -20,
+            "city": "城市",
+            "income": 80000,
+            "rest": 44000,
+            "spend": 124000
+        },
+        "end_time": 1523260889,
+        "money_distribute": {
+            "交流通讯": 50000,
+            "休闲娱乐": 8000,
+            "其它": 8000,
+            "居家物业": 3000,
+            "食品饮酒": 50000
+        },
+        "most_expensive": {
+            "max_spend": 500,
+            "max_spend_time": 1523260889,
+            "max_spend_type": "交流通讯"
+        },
+        "phrase": {
+            "grade": "L4",
+            "text1": "再多存3001可晋级到“饭店自由”",
+            "text2": "想要迅速升级到“饭店自由”吗？"
+        },
+        "predict": {
+            "excess_spend": -5000,
+            "my": 50000,
+            "others": 40000
+        },
+        "report_id": 29999,
+        "seven_days": [
+            500,
+            600,
+            700,
+            200,
+            100,
+            80,
+            11
+        ],
+        "start_time": 1523160889
+    }
+}

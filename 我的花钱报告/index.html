@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的花钱报告</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="box">
+		<div id="header">
+			<img src="img/logo.png" />
+			<img src="img/biglogo.png" />
+			<p class="time"><span class="starttime"></span>-<span class="endtime"></span></p>        <!-- 时间 -->
+		</div>
+		<div id="main">
+			<div class="payhow">
+				<p>花了多少钱</p>
+				<p class="spend"></p>
+				<img src="img/improve.png" id="impro" class="rotate" />
+				<p class="avg_percent"></p>
+				<p>比深圳人均</p>
+				<p>支出</p>
+				<p class="income"></p>
+				<p>收入</p>
+				<p class="rest"></p>
+				<p>结余</p>
+				<span></span>
+			</div>
+			<div class="towhere">
+				<p class="moneyto">钱都去哪了</p>
+				<div class="Pie_Chart">饼图</div>
+				<div class="Bar_Chart">条形图</div>
+				<div class="images center">
+					<div class="pic_change">
+						<div class="left_pic">
+							<p class="Communicate"></p>
+							<p class="entertainment"></p>
+							<p class="others"></p>
+							<p class="Home_Property"></p>
+							<p class="food_wine"></p>
+							<div class="total">
+								<p class="totalmoney"></p>
+								<p class="totaltxt">总计</p>
+							</div>
+							<img src="img/PieTrend.png" class="PieTrend" />
+						</div>
+						<img src="img/BarTrend.png" class="BarTrend" />
+					</div>
+				</div>
+				<ul class="dot">
+					<li></li>
+					<li></li>
+				</ul>
+				<span></span>
+				<p class="count">单笔最贵 3月24日 食品酒店 <i class="expensive"></i></p>
+			</div>
+			<div class="pre_yearpay">
+				<div class="pre_pay">预计本年消费</div>
+				<img src="img/pre.png" class="pre" />
+				<div class="pre_pay2">预计本年消费</div>
+				<div class="yearpay"></div>
+				<p class="savemoney">在深圳,<br/>能比其他人<span class="save"></span></p>
+			</div>
+			<div class="money_free">
+				<p class="free">当前财务自由阶段</p>
+				<img class="market center" style="width:2.13rem;height:2.2rem;" />
+				<img class="marketfree center" />
+				<p class="take center"></p>
+				<div class="mark1">
+					<div class="fl"></div>
+					<div class="fr"></div>
+				</div>
+				<div class="mark2">
+					<div class="fl"></div>
+					<div class="fr"></div>
+				</div>
+				<p class="savemore center"></p>
+				<div class="level center">
+					<p>LV.1 <span>菜场</span> < LV.2 <span>饭店</span> < LV.3 <span>旅行</span> < LV.4 <span>工作</span> < LV.5 <span>房子</span></p>
+				</div>
+				<p class="wish"></p>
+				<a href="####"><img src="img/gift.png" class="gift center" /></a>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/mob.js"></script>
+<script src="js/common.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	var oHeader = document.getElementById('header'),
+	oPie = document.getElementsByClassName('Pie_Chart')[0],
+	oBar = document.getElementsByClassName('Bar_Chart')[0],
+	oPichange = document.getElementsByClassName('pic_change')[0],
+	aImg = oPichange.getElementsByTagName('img'),
+	oDot = document.getElementsByClassName('dot')[0],
+	aLi = oDot.getElementsByTagName('li'),
+	oStartTime = document.getElementsByClassName('starttime')[0],
+	oEndTime = document.getElementsByClassName('endtime')[0],
+	oPayhow = document.getElementsByClassName('payhow')[0],
+	oImpro = document.getElementById('impro'),
+	oSpend = document.getElementsByClassName('spend')[0],
+	oIncome = document.getElementsByClassName('income')[0],
+	oRest = document.getElementsByClassName('rest')[0],
+	oAvgPercent = document.getElementsByClassName('avg_percent')[0],
+	oYearpay = document.getElementsByClassName('yearpay')[0],
+	oSave = document.getElementsByClassName('save')[0],
+	oCommunicate = document.getElementsByClassName('Communicate')[0],
+	oEntertainment = document.getElementsByClassName('entertainment')[0],
+	oOthers = document.getElementsByClassName('others')[0],
+	oFood_wine = document.getElementsByClassName('food_wine')[0],
+	oHome_Property = document.getElementsByClassName('Home_Property')[0],
+	oExpensive = document.getElementsByClassName('expensive')[0],
+	oTotalMoney = document.getElementsByClassName('totalmoney')[0],
+	oMarket = document.getElementsByClassName('market')[0],
+	oTake = document.getElementsByClassName('take')[0],
+	oSaveMore = document.getElementsByClassName('savemore')[0],
+	oWish = document.getElementsByClassName('wish')[0],
+	oLevelSpan = document.getElementsByClassName('level')[0].getElementsByTagName('span'),
+	oMarketFree = document.getElementsByClassName('marketfree')[0],
+	oMain = document.getElementById('main');
+	oPie.onclick = toLeft;
+	oBar.onclick = toRight;
+	oMarket.src = 'img/market.png';
+
+	$(function(){
+		$.ajax({
+			type: "GET",
+			url: "data.json",
+			dataType: "json",
+			success: function(res){
+				console.log(JSON.stringify(res,null,4));
+				oStartTime.innerHTML = timeConverse(Number(res.items.start_time));     //开始日期
+				oEndTime.innerHTML = timeConverse(Number(res.items.end_time));            //结束日期
+				oSpend.innerHTML = RMBConverse(res.items.cost.spend);                 //支出
+				oIncome.innerHTML = RMBConverse(res.items.cost.income);				   //收入
+				oRest.innerHTML = RMBConverse(res.items.cost.rest);						  //结余
+				oAvgPercent.innerHTML = percent(res.items.cost.avg_percent);		   //比深圳人均百分比
+				oYearpay.innerHTML = res.items.predict.my; //预计本年消费
+				oSave.innerHTML = save(res.items.predict.excess_spend);          //预计比其他人省/花多少
+				oCommunicate.innerHTML = getJArray(0,res.items.money_distribute);	   //交流通讯
+				oEntertainment.innerHTML = getJArray(1,res.items.money_distribute);		 //休闲娱乐
+				oOthers.innerHTML = getJArray(2,res.items.money_distribute);	  //其它
+				oHome_Property.innerHTML = getJArray(3,res.items.money_distribute);		 //居家物业
+				oFood_wine.innerHTML = getJArray(4,res.items.money_distribute);  	 //食品饮酒
+
+				var arr1 = [res.items.money_distribute.交流通讯,res.items.money_distribute.休闲娱乐,res.items.money_distribute.其它,res.items.money_distribute.居家物业,res.items.money_distribute.食品饮酒];
+				oExpensive.innerHTML = RMBConverse(arr1.sort(function(a,b){
+					return b-a;
+				})[0]);         			//单笔最贵消费
+				oTotalMoney.innerHTML = RMBConverse(arr1[0]+arr1[1]+arr1[2]+arr1[3]+arr1[4]);
+				//数据判断  start
+				var grade = res.items.phrase.grade;
+				var gradeImg = '';      //等级图片
+				var gradeName = '';      //等级名称
+				var gradeSlogan = '';   //等级口号
+				var gradeNext = '';      //到下一级描述
+				var gradeWish = '';
+				var gradeIndex = 0;
+				switch(grade){
+					case 'L1':
+						gradeImg = 'img/market.png';
+						gradeName = 'img/marketfree.png';
+						gradeSlogan = '看中哪颗葱就任性带走！不还价';
+						gradeNext = '距离下一阶段还差1500';
+						gradeWish = '想要迅速升级到“饭店自由”吗？';
+						gradeIndex = 0;
+						break;
+					case 'L2':
+						gradeImg = 'img/restaurant_img.png';
+						gradeName = 'img/restaurantfree.png';
+						gradeSlogan = '有钱任性，想吃啥就吃啥！';
+						gradeNext = '距离下一阶段还差1500';
+						gradeWish = '想要迅速升级到“旅行自由”吗？';
+						gradeIndex = 1;
+						break;
+					case 'L3':
+						gradeImg = 'img/trip_img.png';
+						gradeName = 'img/tripfree.png';
+						gradeSlogan = '有钱任性，想去哪儿就去哪儿！';
+						gradeNext = '距离下一阶段还差1500';
+						gradeWish = '想要迅速升级到“工作自由”吗？';
+						gradeIndex = 2;
+						break;
+					case 'L4':
+						gradeImg = 'img/work_img.png';
+						gradeName = 'img/workfree.png';
+						gradeSlogan = '高薪就业，你值得拥有！';
+						gradeNext = '距离下一阶段还差1500';
+						gradeWish = '想要迅速升级到“房子自由”吗？';
+						gradeIndex = 3;
+						break;
+					case 'L5':
+						gradeImg = 'img/house_img.png';
+						gradeName = 'img/housefree.png';
+						gradeSlogan = '租房子？哥差钱吗！随便买';
+						gradeNext = '距离下一阶段还差1500';
+						gradeWish = '恭喜您已经到达房子自由！';
+						gradeIndex = 4;
+						break;
+				}
+				oMarket.src = gradeImg;
+				oMarketFree.src = gradeName;
+				oTake.innerHTML = gradeSlogan;
+				oSaveMore.innerHTML = gradeNext;
+				oWish.innerHTML = gradeWish; 
+				oLevelSpan[gradeIndex].style.color = '#cb0200';
+				//数据判断 end
+			}
+		})
+	})
+</script>
+</html>

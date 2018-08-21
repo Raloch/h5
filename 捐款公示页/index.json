@@ -1,0 +1,191 @@
+{
+    "totalCount": 2,
+    "page": 1,
+    "pageEnd": true,
+    "welfareBooks": [
+        {
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/92/CsMBGlkv4ryEK7yUAAAAAPgu1QQ929.jpg",
+            "lastTransactionCategoryName": "灵析平台众筹",
+            "lastTransactionMoney": "89,883.00",
+            "bookSurplus": "307,695.57",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1504540800000,
+                "minutes": 0,
+                "seconds": 0,
+                "hours": 0,
+                "month": 8,
+                "timezoneOffset": -480,
+                "year": 117,
+                "day": 2,
+                "date": 5
+            },
+            "bookName": "班班有个图书角"
+        },
+        {
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/8F/CsMBGlkv4rqECpdYAAAAAHquwgs307.jpg",
+            "lastTransactionCategoryName": "政府捐助",
+            "lastTransactionMoney": "40,800.00",
+            "bookSurplus": "28,639.40",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1483154820000,
+                "minutes": 27,
+                "seconds": 0,
+                "hours": 11,
+                "month": 11,
+                "timezoneOffset": -480,
+                "year": 116,
+                "day": 6,
+                "date": 31
+            },
+            "bookName": "未来英才夏令营"
+        },
+		{
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/92/CsMBGlkv4ryEK7yUAAAAAPgu1QQ929.jpg",
+            "lastTransactionCategoryName": "灵析平台众筹",
+            "lastTransactionMoney": "89,883.00",
+            "bookSurplus": "307,695.57",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1504540800000,
+                "minutes": 0,
+                "seconds": 0,
+                "hours": 0,
+                "month": 8,
+                "timezoneOffset": -480,
+                "year": 117,
+                "day": 2,
+                "date": 5
+            },
+            "bookName": "班班有个图书角"
+        },
+        {
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/8F/CsMBGlkv4rqECpdYAAAAAHquwgs307.jpg",
+            "lastTransactionCategoryName": "政府捐助",
+            "lastTransactionMoney": "40,800.00",
+            "bookSurplus": "28,639.40",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1483154820000,
+                "minutes": 27,
+                "seconds": 0,
+                "hours": 11,
+                "month": 11,
+                "timezoneOffset": -480,
+                "year": 116,
+                "day": 6,
+                "date": 31
+            },
+            "bookName": "未来英才夏令营"
+        },
+		{
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/92/CsMBGlkv4ryEK7yUAAAAAPgu1QQ929.jpg",
+            "lastTransactionCategoryName": "灵析平台众筹",
+            "lastTransactionMoney": "89,883.00",
+            "bookSurplus": "307,695.57",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1504540800000,
+                "minutes": 0,
+                "seconds": 0,
+                "hours": 0,
+                "month": 8,
+                "timezoneOffset": -480,
+                "year": 117,
+                "day": 2,
+                "date": 5
+            },
+            "bookName": "班班有个图书角"
+        },
+        {
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/8F/CsMBGlkv4rqECpdYAAAAAHquwgs307.jpg",
+            "lastTransactionCategoryName": "政府捐助",
+            "lastTransactionMoney": "40,800.00",
+            "bookSurplus": "28,639.40",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1483154820000,
+                "minutes": 27,
+                "seconds": 0,
+                "hours": 11,
+                "month": 11,
+                "timezoneOffset": -480,
+                "year": 116,
+                "day": 6,
+                "date": 31
+            },
+            "bookName": "未来英才夏令营"
+        },
+		{
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/92/CsMBGlkv4ryEK7yUAAAAAPgu1QQ929.jpg",
+            "lastTransactionCategoryName": "灵析平台众筹",
+            "lastTransactionMoney": "89,883.00",
+            "bookSurplus": "307,695.57",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1504540800000,
+                "minutes": 0,
+                "seconds": 0,
+                "hours": 0,
+                "month": 8,
+                "timezoneOffset": -480,
+                "year": 117,
+                "day": 2,
+                "date": 5
+            },
+            "bookName": "班班有个图书角"
+        },
+        {
+            "bookTransactionUrl": "detail.html",
+            "dbId": 14,
+            "lastTransactionDateType": 3,
+            "lastTransactionName": "收入",
+            "bookIconUrl": "http://cloud.feidee.com/group5/M00/41/8F/CsMBGlkv4rqECpdYAAAAAHquwgs307.jpg",
+            "lastTransactionCategoryName": "政府捐助",
+            "lastTransactionMoney": "40,800.00",
+            "bookSurplus": "28,639.40",
+            "type": 1,
+            "lastTransTime": {
+                "time": 1483154820000,
+                "minutes": 27,
+                "seconds": 0,
+                "hours": 11,
+                "month": 11,
+                "timezoneOffset": -480,
+                "year": 116,
+                "day": 6,
+                "date": 31
+            },
+            "bookName": "未来英才夏令营"
+        }
+    ]
+}

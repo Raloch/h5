@@ -1,0 +1,19 @@
+body,p,ul,li,a { 
+	margin:0; padding:0; 
+}
+p,img,a { 
+	display: block;
+}
+li { 
+	list-style: none; 
+}
+.center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+.fl {
+	float: left;
+}
+.fr {
+	float: right; 
+}

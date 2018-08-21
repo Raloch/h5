@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>公益捐款公式页</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div id="app">
+		<!-- 头部区域 -->
+		<div id="header">
+			<div class="header_logo_box fl">
+				<img src="images/header_logo.png" class="header_logo" />
+			</div>
+			<article class="header_text fl">
+				<div class="header_text_box heightcenter">
+					<h2 class="title">担当者行动</h2>
+					<p class="title_msg">让每个乡村小学的孩子都享有高品质量的阅读</p>
+				</div>
+			</article>
+		</div>
+		<div class="publicity">6个账本正在公示：</div>
+		<div class="indexList"></div>
+		<!-- 栏目内容 -->
+		<!-- <div class="main">
+			<div class="main_box">
+				<div class="picbox fl">
+					<img src="images/children1.png" class="img_children" />
+				</div>
+				<div class="main_text fl">
+					<div class="text_box">
+						<h2 class="text_title"></h2>
+						<div class="spend">
+							<p class="text_spend">最近一笔 支出 书架物流配送</p>
+							<p class="text_money">6300000000.00</p>
+						</div>
+						<div class="remain">
+							<p class="remain_characters">当前结余</p>
+							<p class="remain_money">35.00</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="images/arrow.png" class="arrow" />
+		</div> -->
+		
+		<!-- 底部logo栏 -->
+		<div class="footer">
+			<div class="footer_main">
+				<p class="fl">Powerd by</p>
+				<img src="images/footer_logo.png" class="footer_logo fl">
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/mob.js"></script>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script>
+	$(function(){
+		$.ajax({
+			type: "GET",
+			url: "index.json",
+			dataType: "json",
+			success: function(data){
+				console.log(JSON.stringify(data,null,4));
+				var len = data.welfareBooks.length,
+				result = '',
+				url = data.welfareBooks[0].bookTransactionUrl;
+				for(var i=0;i<len;i++){
+					bookName = data.welfareBooks[i].bookName,
+					lastTransactionName = data.welfareBooks[i].lastTransactionName,
+					lastTransactionCategoryName = data.welfareBooks[i].lastTransactionCategoryName,
+					lastTransactionMoney = data.welfareBooks[i].lastTransactionMoney,
+					bookIconUrl = data.welfareBooks[i].bookIconUrl,
+					bookSurplus = data.welfareBooks[i].bookSurplus;
+					result +='<a href='+url+'>'+'<div class="main">'+
+								'<div class="main_box">'+
+									'<div class="picbox fl">'+
+									'<img src='+bookIconUrl+ ' class="img_children fl" />'+
+									'</div>'+
+										'<div class="main_text fl">'+
+											'<div class="text_box">'+
+												'<h2 class="text_title">'+ bookName +'</h2>'+
+												'<div class="spend">'+
+													'<p class="text_spend">'+'最近一笔'+' '+ lastTransactionName + ' ' + lastTransactionCategoryName +'</p>'+
+													'<p class="text_money">'+ lastTransactionMoney +'</p>'+
+												'</div>'+
+												'<div class="remain">'+
+													'<p class="remain_characters">当前结余</p>'+
+													'<p class="remain_money">'+ bookSurplus +'</p>'+
+												'</div>'+
+											'</div>'+
+										'</div>'+
+									'</div>'+
+									'<img src="images/arrow.png" class="arrow" />'+
+								'</div>'+
+							'</a>';
+				}
+				$('.indexList').append(result);
+			}
+		})
+	})
+</script>
+</html>

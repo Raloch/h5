@@ -1,0 +1,445 @@
+body {
+	max-width: 750px;
+	margin: 0 auto;
+	line-height: 1.5;
+	font-size: 0.24rem;	
+	font-family: Helvetica Neue,Helvetica,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+}
+#box {
+	width: 7.5rem;
+	position: relative;
+	box-sizing: border-box;
+}
+.rotate { transform: rotateX(180deg); }
+
+      /*header*/   
+#header {
+	width: 7.5rem;
+	height: 4.92rem;
+	background: url(../img/bg.png) no-repeat ;
+	background-size: 7.5rem;
+	position: relative;
+}
+#header img:nth-child(1) {
+	width: 1.59rem;
+	height: 0.48rem;
+	position: absolute;
+	top: 1.23rem;
+	left: 0.49rem;
+}
+#header img:nth-child(2) {
+	width: 4.78rem;
+	height: 0.86rem;
+	position: absolute;
+	top: 1.91rem;
+	left: 0.47rem;
+}
+#header p:nth-child(3) {
+	color: #fff;
+	position: absolute;
+	top: 2.89rem;
+	right: 2.34rem;
+}
+
+
+
+        /*main*/
+#main {
+	width: 7.5rem;
+}
+      /*花了多少钱*/
+.payhow {
+	position: relative;
+	width: 6.37rem;
+	height: 3.81rem;
+	border-bottom: 1px solid #d6d9de;
+	margin: 0 auto;
+	margin-bottom: 0.89rem;
+	margin-top: -0.75rem;
+}
+.payhow p:nth-child(1) {        /*花了多少钱*/
+	font-size: 0.28rem;
+	color: #ffb151;
+	line-height: 1;
+	border-left: 0.12rem solid #ffb151;
+	padding-left: 0.12rem;
+	position: absolute;
+	top: 0rem;
+}
+.payhow p:nth-child(2) {        /*1,240,00*/    
+	position: absolute;
+	top: 0.77rem;
+	left: 0.07rem;
+	font-size: 0.9rem;
+	color: #32425b;
+}
+.payhow img:nth-child(3) {       /*img*/
+	position: absolute;
+	width: 0.38rem;
+	height: 0.2rem;
+	top: 1.2rem;
+	right: 0.64rem;
+}
+.payhow p:nth-child(4) {         /*20%*/
+	color: #ff695c;
+	position: absolute;
+	top: 1.14rem;
+	right: 0rem;
+}
+.payhow p:nth-child(5) {       /*比深圳人均*/
+	color: #98a0ad;
+	position: absolute;
+	top: 1.47rem;
+	right: 0;
+}
+.payhow p:nth-child(6) {       /*支出*/
+	color: #14ba89;
+	position: absolute;
+	top: 1.85rem;
+	left: 0.08rem;
+}
+.payhow p:nth-child(7) {       /*800.00*/
+	color: #32425b;
+	position: absolute;
+	top: 2.45rem;
+	font-size: 0.42rem;
+	left: 0.06rem;
+}
+.payhow p:nth-child(8) {      /*收入*/
+	position: absolute;
+	left: 0.07rem;
+	top: 2.96rem;
+	color: #f2635c;
+}
+.payhow p:nth-child(9) {     /*440.00*/
+	color: #32425b;
+	position: absolute;
+	top: 2.45rem;
+	font-size: 0.42rem;
+	left: 3.83rem;
+}
+.payhow p:nth-child(10) {     /*结余*/
+	color: #98a0ad;
+	position: absolute;
+	top: 3.02rem;
+	left: 3.83rem;
+}
+.payhow span:nth-child(11) {    /*竖线分隔*/
+	width: 0.01rem;
+	height: 0.74rem;
+	background: #d6d9de;
+	position: absolute;
+	top: 2.5rem;
+	left: 3.22rem;
+}
+
+
+
+
+		/*钱都去哪儿了*/
+.towhere {
+	width: 6.54rem;
+	height: 6.52rem;
+	margin: 0 auto;
+	position: relative;
+	margin-bottom: 1.11rem;
+}
+.moneyto {
+	color: #ff695c;
+	font-size: 0.28rem;
+	line-height: 1;
+	border-left: 0.12rem solid #ff695c;
+	padding-left: 0.12rem;
+}
+.Pie_Chart {            /*文字：饼图*/
+	width: 0.86rem;
+	height: 0.5rem;
+	position: absolute;
+	top: -0.1rem;
+	right: 0.97rem;
+	background: #ff695c;
+	border-radius: 0.21rem;
+	text-align: center;
+	line-height: 0.5rem;
+	color: #fff;
+}
+.Bar_Chart {           /*文字：条形图*/
+	height: 0.5rem;
+	width: 0.97rem;
+	position: absolute;
+	top: -0.1rem;
+	right: 0;
+	border-radius: 0.21rem;
+	text-align: center;
+	line-height: 0.5rem;
+	color: #98a0ad;
+}
+.images {                  /*images*/
+	width: 6.54rem;
+	height: 3.73rem;
+	position: absolute;
+	top: 1.21rem;
+	overflow: hidden;
+}
+.pic_change {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 13.08rem;
+	height: 3.73rem;
+}
+.BarTrend,.PieTrend {
+	width: 6.54rem;
+	height: 3.73rem;
+	float: left;
+}
+.left_pic {
+	width: 6.54rem;
+	height: 3.73rem;
+	float: left;
+	position: relative;
+}
+.Communicate {
+	position: absolute;
+	top: 0.12rem;
+	left: 0.07rem;
+	color: #32425b;
+	z-index: 999;
+}
+.entertainment {
+	position: absolute;
+	color: #32425b;
+	z-index: 999;
+	right: 5.54rem;
+	top: 1.33rem;
+}
+.others {
+	position: absolute;
+	color: #32425b;
+	z-index: 999;
+	top: 3.04rem;
+	left: 0.07rem;
+}
+.Home_Property {
+	position: absolute;
+	color: #32425b;
+	z-index: 999;
+	right: 0.18rem;
+	top: 3.04rem;
+}
+.food_wine {
+	position: absolute;
+	color: #32425b;
+	z-index: 999;
+	right: 0.18rem;
+	top: 0.12rem;
+}
+.total {
+	line-height: 1.5;
+	position: absolute;
+	width: 2.02rem;
+	height: 2.01rem;
+	top: 0.84rem;
+	right: 2.24rem;
+	z-index: 999;
+}
+.totalmoney {
+	font-size: 0.32rem;
+	font-weight: 600;
+	width: 2.02rem;
+	text-align: center;
+	position: absolute;
+	color: #32425b;
+	z-index: 999;
+	top: 0.66rem;
+}
+.totaltxt {
+	width: 2.02rem;
+	text-align: center;
+	font-size: 0.24rem;
+	position: absolute;
+	color: #32425b;
+	z-index: 999;
+	top: 1.17rem;
+}
+.dot li:nth-child(1) {
+	width: 0.11rem;
+	height: 0.11rem;
+	border-radius: 0.05rem;
+	background: #ff695c;
+	position: absolute;
+	left: 3rem;
+	bottom: 0.92rem;
+}
+.dot li:nth-child(2) {
+	width: 0.11rem;
+	height: 0.11rem;
+	border-radius: 0.05rem;
+	background: #ededed;
+	position: absolute;
+	bottom: 0.92rem;
+	right: 3rem;
+}
+.towhere span {
+	width: 0.06rem;
+	height: 0.13rem;
+	background: #ffb485;
+	position: absolute;
+	left: 0.07rem;
+	bottom: 0.05rem;
+}
+.count {
+	color: #32425b;
+	position: absolute;
+	bottom: -0.06rem;
+	left: 0.22rem;
+}
+.expensive {
+	font-style: normal;
+}
+
+
+        /*预计本年消费*/
+.pre_yearpay {
+	width: 6.54rem;
+	height: 4.27rem;
+	margin: 0 auto;
+	margin-bottom: 1.18rem;
+	position: relative;
+}
+.pre_pay {
+	font-size: 0.28rem;
+	color: #ea3651;
+	border-left: 0.12rem solid #ea3651;
+	line-height: 1;
+	padding-left: 0.12rem
+}
+.pre {
+	width: 3.04rem;
+	height: 2.8rem;
+	position: absolute;
+	top: 1.47rem;
+	left: 0.37rem;
+}
+.pre_pay2 {
+	font-size: 0.28rem;
+	color: #32425b;
+	position: absolute;
+	top: 1.66rem;
+	left: 4.13rem;
+}
+.yearpay {
+	color: #32425b;
+	position: absolute;
+	top: 2.07rem;
+	left: 4.15rem;
+	font-size: 0.44rem;
+}
+.savemoney {
+	color: #32425b;
+	position: absolute;
+	top: 2.92rem;
+	left: 4.14rem;
+}
+
+
+       /*当前财务自由阶段*/
+.money_free {
+	width: 6.54rem;
+	height: 9.86rem;
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 2.58rem;
+}
+.free {
+	font-size: 0.28rem;
+	border-left:0.12rem solid #fa6d4c;
+	color: #fa6d4c;
+	padding-left: 0.12rem;
+}
+.market {
+	width: 2.13rem;
+	height: 2.2rem;
+	position: absolute;
+	top: 1.12rem;
+}
+.marketfree {
+	width: 2.98rem;
+	height: 0.82rem;
+	position: absolute;
+	top: 3.79rem;
+}
+.take {
+	width: 7.5rem;
+	text-align: center;
+	font-size: 0.32rem;
+	color: #32425b;
+	position: absolute;
+	top: 4.77rem;
+}
+.mark1 { 						/*双引号*/
+	width: 0.32rem;
+	height: 0.18rem;
+	position: absolute;
+	top: 4.7rem;
+	left: 0.44rem;
+}
+.mark1 div {
+	background: #324253;
+	width: 0.12rem;
+	height: 0.18rem;
+}
+.mark2 {
+	width: 0.32rem;
+	height: 0.18rem;
+	position: absolute;
+	top: 4.7rem;
+	right: 0.44rem;
+}
+.mark2 div {
+	background: #324253;
+	width: 0.12rem;
+	height: 0.18rem;
+}
+.savemore {
+	width: 7.5rem;
+	text-align: center;
+	color: #98a0ad;
+	font-size: 0.26rem;
+	position: absolute;
+	top: 5.32rem;
+}
+    /*数据等级*/
+.level {
+	height: 0.47rem;
+	width: 6.45rem;
+	border-radius: 0.2rem;
+	background: #ffdcd4;
+	position: absolute;
+	top: 6.33rem;
+}
+.level p {
+	text-align: center;
+	line-height: 0.47rem;
+}
+.level p span {
+	color: #32425b;
+}
+.wish {
+	font-size: 0.36rem;
+	color: #32425b;
+	position: absolute;
+	top: 7.04rem;
+	left: -0.04rem;
+}
+.gift {
+	width: 6.5rem;
+	height: 2.09rem;
+	position: absolute;
+	bottom: 0;
+}
+
+
+
+
+
